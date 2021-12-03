@@ -1,13 +1,24 @@
-import path from 'path'
-import chalk from 'chalk'
-import { spawn } from 'child_process'
-import chokidar from 'chokidar'
-import electron from 'electron'
-import webpack from 'webpack'
-import WebpackDevServer from 'webpack-dev-server'
-import webpackHotMiddleware from 'webpack-hot-middleware'
+// import path from 'path'
+// import chalk from 'chalk'
+// import { spawn } from 'child_process'
+// import chokidar from 'chokidar'
+// import electron from 'electron'
+// import webpack from 'webpack'
+// import WebpackDevServer from 'webpack-dev-server'
+// import webpackHotMiddleware from 'webpack-hot-middleware'
 
-import { port, source } from '../config/dev.config'
+// import { port, source } from '../config/dev.config'
+
+
+const path = require('path');
+const chalk = require('chalk');
+const { spawn }  = require('child_process');
+const chokidar  = require('chokidar');
+const electron  = require('electron');
+const webpack  = require('webpack');
+const WebpackDevServer  = require('webpack-dev-server');
+const webpackHotMiddleware  = require('webpack-hot-middleware');
+const { port, source }  = require('../config/dev.config');
 
 process.env.NODE_ENV = 'development'
 const webpackConfig = require('../config/webpack.config')

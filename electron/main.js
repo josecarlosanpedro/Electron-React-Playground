@@ -23,9 +23,17 @@ if (NODE_ENV === 'development') {
   winURL = `file://${path.join(__dirname, '../dist/index.html')}`
 }
 
-
 function createWindow() {
-  mainWindow = new BrowserWindow({ width: 800, height: 600 })
+  mainWindow = new BrowserWindow({ width: 800, height: 600 ,
+    webPreferences: {
+      // preload: path.resolve(__dirname + "/preloader/preload.js"),
+      // nodeIntegration: true,
+      // // contextIsolation: true,
+      devTools: true,
+      // preload: __dirname + "/preloader/preload.js"
+    }
+  })
+  mainWindow.webContents.openDevTools();
 
   mainWindow.loadURL(winURL)
 
